@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists - Career Guide</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .playlist-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .playlist {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .playlist:hover {
+            transform: translateY(-5px);
+        }
+        .playlist h2 {
+            font-size: 1.5em;
+            color: #007bff;
+        }
+        .playlist p {
+            font-size: 1em;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Playlists</h1>
+        <div class="playlist-container">
+            
+                <div class="playlist">
+                    <h2>HTML AND CSS FULL COURSE PLAYLIST</h2>
+                    <p> FULL GUIDE FOR HTML,CSS,JavaScript, Project, Git & GitHub by APNA COLLEGE</p>
+                    <a href="https://youtube.com/playlist?list=PLfqMhTWNBTe0PY9xunOzsP5kmYIz2Hu7i&si=RZNPQ-7viewIrm-h" class="btn" target="_blank">View Playlist</a>
+                </div>
+            
+            <div class="playlist">
+                <h2>HTML & CSS Full Course</h2>
+                <p>A complete beginner-friendly course on HTML and CSS to kickstart your web development journey. by APNA COLLEGE</p>
+                <a href="https://youtu.be/HcOc7P5BMi4?si=qzijPDTGhsZROcii" target="_blank" class="btn">Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
+

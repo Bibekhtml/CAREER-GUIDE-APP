@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Aptitude Test</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #6e8efb;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            align-self: flex-start;
+        }
+
+        button:hover {
+            background: #4b6cb7;
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px #4b6cb7;
+        }
+
+        footer {
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Career Aptitude Test</h1>
+    </header>
+    <main>
+        <form action="#" method="POST">
+            <ol>
+                <li>
+                    <p>What type of work environment do you prefer?</p>
+                    <input type="radio" name="q1" value="a"> Office-based<br>
+                    <input type="radio" name="q1" value="b"> Outdoor<br>
+                    <input type="radio" name="q1" value="c"> Remote<br>
+                </li>
+                <li>
+                    <p>Which skill do you excel at?</p>
+                    <input type="radio" name="q2" value="a"> Problem-solving<br>
+                    <input type="radio" name="q2" value="b"> Communication<br>
+                    <input type="radio" name="q2" value="c"> Creativity<br>
+                </li>
+                <li>
+                    <p>What motivates you the most?</p>
+                    <input type="radio" name="q3" value="a"> Financial rewards<br>
+                    <input type="radio" name="q3" value="b"> Helping others<br>
+                    <input type="radio" name="q3" value="c"> Personal growth<br>
+                </li>
+                <li>
+                    <p>How do you handle challenges?</p>
+                    <input type="radio" name="q4" value="a"> Analyze and plan<br>
+                    <input type="radio" name="q4" value="b"> Seek advice<br>
+                    <input type="radio" name="q4" value="c"> Take risks<br>
+                </li>
+                <li>
+                    <p>What is your preferred work schedule?</p>
+                    <input type="radio" name="q5" value="a"> Fixed hours<br>
+                    <input type="radio" name="q5" value="b"> Flexible hours<br>
+                    <input type="radio" name="q5" value="c"> Project-based<br>
+                </li>
+            </ol>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Career Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>

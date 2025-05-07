@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h2 {
+      color: #003d82;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    form#profileForm {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      width: 100%;
+      margin: 20px auto;
+    }
+
+    form#profileForm label {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    form#profileForm input {
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+
+    form#profileForm button {
+      width: 100%;
+      padding: 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form#profileForm button:hover {
+      background: #0056b3;
+    }
+
+    .profile-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      width: 100%;
+      margin: 20px auto 40px;
+      text-align: center;
+    }
+
+    .profile-container img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 5px solid #007bff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-details p {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Update Profile</h2>
+
+  <form id="profileForm">
+    <label>First Name: <input type="text" id="firstNameInput" required></label><br>
+    <label>Last Name: <input type="text" id="lastNameInput" required></label><br>
+    <label>Phone Number: <input type="text" id="phoneInput" required></label><br>
+    <label>Email: <input type="email" id="emailInput" required></label><br>
+    <label>Photo: <input type="file" id="photoInput" accept="image/*" required></label><br><br>
+    <button type="submit">Save Profile</button>
+  </form>
+
+  <hr>
+
+  <h2>User Profile Overview</h2>
+
+  <div class="profile-container">
+    <img id="photo" src="" alt="Profile Photo">
+    <div class="profile-details">
+      <p><strong>First Name:</strong> <span id="firstName"></span></p>
+      <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+      <p><strong>Phone Number:</strong> <span id="phone"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // Load data from localStorage on page load
+    window.onload = function () {
+      const userProfile = JSON.parse(localStorage.getItem('userProfile'));
+      if (userProfile) {
+        document.getElementById('firstName').textContent = userProfile.firstName;
+        document.getElementById('lastName').textContent = userProfile.lastName;
+        document.getElementById('phone').textContent = userProfile.phone;
+        document.getElementById('email').textContent = userProfile.email;
+        if (userProfile.photo) {
+          document.getElementById('photo').src = userProfile.photo;
+        }
+      }
+    };
+
+    // Handle form submission
+    document.getElementById('profileForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const reader = new FileReader();
+      const file = document.getElementById('photoInput').files[0];
+
+      reader.onload = function () {
+        const photoData = reader.result;
+
+        const userProfile = {
+          firstName: document.getElementById('firstNameInput').value,
+          lastName: document.getElementById('lastNameInput').value,
+          phone: document.getElementById('phoneInput').value,
+          email: document.getElementById('emailInput').value,
+          photo: photoData
+        };
+
+        localStorage.setItem('userProfile', JSON.stringify(userProfile));
+        alert("Your profile is updated");
+        location.reload(); // Reload to show updated data
+      };
+
+      if (file) {
+        reader.readAsDataURL(file); // Convert image to base64
+      }
+    });
+  </script>
+
+</body>
+</html>

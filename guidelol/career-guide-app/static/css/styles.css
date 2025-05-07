@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: #35424a;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navbar a:hover {
+    background: #e8491d;
+}
+
+.section {
+    padding: 20px;
+    background: #ffffff;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.test-button {
+    background-color: #e8491d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.test-button:hover {
+    background-color: #35424a;
+}
+
+.playlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.playlist-item {
+    background: #e4e4e4;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1 1 calc(30% - 20px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.playlist-item h3 {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .playlist-item {
+        flex: 1 1 calc(100% - 20px);
+    }
+}

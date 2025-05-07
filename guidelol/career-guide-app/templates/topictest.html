@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Guidance Test</title>
+  <style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 90%;
+    margin: 50px auto;
+    text-align: left;
+}
+
+h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 30px;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    padding: 8px 12px;
+    background: #f0f4ff;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+label:hover {
+    background: #d8e7ff;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #007bff;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 0 auto;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Career Guidance Knowledge Test</h2>
+
+    <form id="careerTest">
+      
+      <div class="question">
+        <p>1. What is the first step in choosing a career path?</p>
+        <label><input type="radio" name="q1" value="a"> Apply for jobs</label><br>
+        <label><input type="radio" name="q1" value="b"> Understand your interests and strengths</label><br>
+        <label><input type="radio" name="q1" value="c"> Ask your friends</label><br>
+      </div>
+
+      <div class="question">
+        <p>2. Which of the following is most useful for career planning?</p>
+        <label><input type="radio" name="q2" value="a"> Watching random YouTube videos</label><br>
+        <label><input type="radio" name="q2" value="b"> Taking personality and skill assessments</label><br>
+        <label><input type="radio" name="q2" value="c"> Relying on luck</label><br>
+      </div>
+
+      <div class="question">
+        <p>3. What is a career portfolio?</p>
+        <label><input type="radio" name="q3" value="a"> A type of investment</label><br>
+        <label><input type="radio" name="q3" value="b"> A collection of your achievements and experiences</label><br>
+        <label><input type="radio" name="q3" value="c"> A job search engine</label><br>
+      </div>
+
+      <div class="question">
+        <p>4. What does networking mean in career development?</p>
+        <label><input type="radio" name="q4" value="a"> Using the internet</label><br>
+        <label><input type="radio" name="q4" value="b"> Building professional relationships</label><br>
+        <label><input type="radio" name="q4" value="c"> Posting selfies</label><br>
+      </div>
+
+      <button type="submit">Submit Test</button>
+    </form>
+  </div>
+
+</body>
+</html>

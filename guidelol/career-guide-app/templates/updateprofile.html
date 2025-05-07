@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Form</title>
+  <style>
+    /* Reset body margin and padding for consistent styling */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Centering the heading and styling */
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        color: #333;
+        font-size: 2rem;
+    }
+
+    /* Styling for the form container */
+    form {
+        max-width: 500px;
+        margin: 30px auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    form:hover {
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Label styling */
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+        color: #555;
+        font-size: 1rem;
+    }
+
+    /* Input fields styling */
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+        box-sizing: border-box;
+    }
+
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    input[type="email"]:focus,
+    input[type="file"]:focus {
+        border-color: #888;
+        background-color: #fff;
+        outline: none;
+    }
+
+    /* Submit button styling */
+    button {
+        margin-top: 25px;
+        padding: 14px 30px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Hover effect for the button */
+    button:hover {
+        background-color: #555;
+        transform: translateY(-2px);
+    }
+
+    /* Focus effect for accessibility */
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 5px #555;
+    }
+
+    /* Disabled button styling */
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 600px) {
+        form {
+            margin: 20px;
+            padding: 25px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+        }
+    }
+  </style>
+  <script>
+    // JavaScript function to handle form submission and redirect
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent the form from reloading the page
+
+        // Get form data
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const photo = document.getElementById('photo').files[0];
+
+        // Store the data in localStorage
+        const userProfile = {
+            firstName,
+            lastName,
+            phone,
+            email,
+            photo: photo ? URL.createObjectURL(photo) : '' // If there's a photo, create a URL for it
+        };
+
+        localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+        // Redirect to the profile.html page in the mainprofile folder
+        window.location.href = 'profile1.html';
+    }
+  </script>
+</head>
+<body>
+
+  <h2>User Profile Form</h2>
+
+  <form onsubmit="handleSubmit(event)">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="photo">Upload Photo:</label>
+    <input type="file" id="photo" name="photo" accept="image/*" required>
+    <script>
+        function goToProfile() {
+          window.location.href = "profile1.html"; // Replace with your actual page URL
+        }
+      </script> 
+     <button class="cta-button" onclick="goToProfile()">Submit</button>
+      <!-- <input type="button" value="Submit" onclick="handleSubmit(event)"> -->
+      <!-- <a href="mainprofile/profile.html" ></a> -->
+  </form>
+
+</body>
+</html>

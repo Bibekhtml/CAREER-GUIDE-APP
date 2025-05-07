@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/scripts.js' %}" defer></script>
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #ffdd57;
+            color: #333;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Career Guide</h1>
+        <nav>
+            <ul>
+               
+
+                <li><a href="topictest.html">Topic Tests</a></li>
+                
+                <li><a href="pl.html">Playlists</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="video-guidance">
+            <h2>Stepwise Video Guidance</h2>
+            <p>Explore our comprehensive video guidance on various career paths.</p>
+            <div id="video-guidance-content">
+                <!-- Video content will be dynamically loaded here -->
+            </div>
+        </section>
+        <section id="topic-tests">
+            <h2>Take a Topic Test</h2>
+            <p>Assess your knowledge with our topic tests.</p>
+            <a href="topictest.html" class="btn">Start Test</a>
+        </section>
+        <section id="distraction-blocking">
+            <h2>Distraction Blocking</h2>
+            <p>Utilize our distraction blocking tools to enhance your focus.</p>
+            <a href="bi.html" class="btn">Set Up Blocking</a>
+        </section>
+        <section id="playlists">
+            <h2>Playlists from Various Teachers</h2>
+            <p>Access curated playlists from experienced teachers.</p>
+            <div id="playlists-content">
+                <!-- Playlist content will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Career Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

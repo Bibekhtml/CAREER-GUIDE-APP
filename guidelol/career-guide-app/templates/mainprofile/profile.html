@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .profile-container {
+      background-color: #ffffff;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e0e0e0;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .profile-detail {
+      margin: 15px 0;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .profile-detail strong {
+      color: #555;
+      display: inline-block;
+      width: 140px;
+    }
+
+    .profile-detail span {
+      color: #000;
+      font-weight: 500;
+    }
+
+    @media (max-width: 540px) {
+      .profile-container {
+        padding: 25px;
+      }
+      .profile-detail strong {
+        width: 120px;
+      }
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      const userProfile = JSON.parse(localStorage.getItem('userProfile'));
+      if (userProfile) {
+        document.getElementById('firstName').textContent = userProfile.firstName || 'N/A';
+        document.getElementById('lastName').textContent = userProfile.lastName || 'N/A';
+        document.getElementById('phone').textContent = userProfile.phone || 'N/A';
+        document.getElementById('email').textContent = userProfile.email || 'N/A';
+        document.getElementById('photo').src = userProfile.photo || 'https://via.placeholder.com/130?text=Photo';
+      }
+    };
+  </script>
+</head>
+<body>
+
+  <div class="profile-container">
+    <img id="photo" class="profile-photo" src="https://via.placeholder.com/130?text=Photo" alt="Profile Photo">
+    <h2>User Profile</h2>
+    <div class="profile-detail"><strong>First Name:</strong> <span id="firstName"></span></div>
+    <div class="profile-detail"><strong>Last Name:</strong> <span id="lastName"></span></div>
+    <div class="profile-detail"><strong>Phone Number:</strong> <span id="phone"></span></div>
+    <div class="profile-detail"><strong>Email:</strong> <span id="email"></span></div>
+  </div>
+
+</body>
+</html>

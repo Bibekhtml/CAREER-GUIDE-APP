@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Form</title>
+</head>
+<body>
+
+  <h2>Update Profile</h2>
+
+  <form id="profileForm">
+    <label>First Name: <input type="text" id="firstNameInput" required></label><br>
+    <label>Last Name: <input type="text" id="lastNameInput" required></label><br>
+    <label>Phone Number: <input type="text" id="phoneInput" required></label><br>
+    <label>Email: <input type="email" id="emailInput" required></label><br>
+    <label>Photo: <input type="file" id="photoInput" accept="image/*" required></label><br><br>
+    <button type="submit">Save Profile</button>
+  </form>
+
+  <script>
+    document.getElementById('profileForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const file = document.getElementById('photoInput').files[0];
+      const reader = new FileReader();
+
+      reader.onload = function () {
+        const photoData = reader.result;
+
+        const userProfile = {
+          firstName: document.getElementById('firstNameInput').value,
+          lastName: document.getElementById('lastNameInput').value,
+          phone: document.getElementById('phoneInput').value,
+          email: document.getElementById('emailInput').value,
+          photo: photoData
+        };
+
+        localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+        // Redirect to the profile overview page
+        window.location.href = 'profile-overview.html';
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
+</body>
+</html>
